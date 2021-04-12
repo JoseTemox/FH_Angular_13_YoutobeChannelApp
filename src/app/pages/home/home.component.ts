@@ -15,7 +15,11 @@ export class HomeComponent implements OnInit {
   constructor( private youtobeService: YoutubeService) { }
 
   ngOnInit(): void {
+    this.cargarVideos();
 
+  }
+
+  cargarVideos(){
     this.youtobeService.getVideos().subscribe( videos =>{
 
       this.videos.push(...videos);
